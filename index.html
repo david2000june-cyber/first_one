@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>D:O</title>
+    <style>
+        :root {
+            --size: 70px;
+            --speed-rot: 12s;
+            --wiggle-speed: 5s;
+            --bg1: #6ee7b7;
+            --bg2: #60a5fa;
+        }
+
+        html,
+        body {
+
+            background: #0f172a;
+        }
+
+        .orb {
+            width: var(--size);
+            height: var(--size);
+            background: radial-gradient(circle at 30% 30%, var(--bg1), var(--bg2));
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            animation: spin var(--speed-rot) linear infinite,
+                wiggle var(--wiggle-speed) ease-in-out infinite;
+        }
+
+        /* wiggle by morphing border-radius over time */
+        @keyframes wiggle {
+            0% {
+                border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+            }
+
+            25% {
+                border-radius: 60% 40% 55% 45% / 45% 60% 40% 55%;
+            }
+
+            50% {
+                border-radius: 40% 60% 45% 55% / 60% 40% 55% 45%;
+            }
+
+            75% {
+                border-radius: 55% 45% 60% 40% / 50% 65% 35% 50%;
+            }
+
+            100% {
+                border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .emoji {
+            position: relative;
+            z-index: 2;
+            font-size: calc(var(--size) * 0.32);
+            /* counter-spin keeps it upright */
+            animation: counterSpin var(--speed-rot) linear infinite;
+        }
+
+        @keyframes counterSpin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        /* optional floating wiggle for the brain itself */
+        .emoji {
+            animation: counterSpin var(--speed-rot) linear infinite,
+                floatY 3s ease-in-out infinite;
+        }
+
+        @keyframes floatY {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6%);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .orb,
+            .emoji {
+                animation: none !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="col-12">
+        <div class="col-12 section">
+            <div class="col-3">
+                <div class="card3">
+                    <div class="image4">
+                        <img src="download (2).jpg" alt="suii" srcset="">
+                    </div>
+                    <h3>
+                        Rewire your brain
+                    </h3>
+                    <p>Neuroplasticity in action - just 10 minutes daily physically reshapes your brain for better
+                        focus
+                        and emotional control.</p>
+                    <div class="image3">
+                        <img src="download (2).jpg" alt="yay" srcset="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card3">
+                    <div class="image4">
+                        <img src="download (2).jpg" alt="suii" srcset="">
+                    </div>
+                    <h3>
+                        Rewire your brain
+                    </h3>
+                    <p>Neuroplasticity in action - just 10 minutes daily physically reshapes your brain for better
+                        focus
+                        and emotional control.</p>
+                    <div class="image3">
+                        <img src="download (2).jpg" alt="yay" srcset="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card3">
+                    <div class="image4">
+                        <img src="download (2).jpg" alt="suii" srcset="">
+                    </div>
+                    <h3>
+                        Rewire your brain
+                    </h3>
+                    <p>Neuroplasticity in action - just 10 minutes daily physically reshapes your brain for better
+                        focus
+                        and emotional control.</p>
+                    <div class="image3">
+                        <img src="download (2).jpg" alt="yay" srcset="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card3">
+                    <div class="image4">
+                        <img src="download (2).jpg" alt="suii" srcset="">
+                    </div>
+                    <h3>
+                        Rewire your brain
+                    </h3>
+                    <p>Neuroplasticity in action - just 10 minutes daily physically reshapes your brain for better
+                        focus
+                        and emotional control.</p>
+                    <div class="image3">
+                        <img src="download (2).jpg" alt="yay" srcset="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="col-12">
+        <div class="col-12 section">
+            <div class="col-4">
+                <div class="card">
+                    <div class="orb">
+                        <div class="emoji">🧠</div>
+                    </div>
+                    <h3>
+                        Rewire your brain
+                    </h3>
+                    <p>Neuroplasticity in action - just 10 minutes daily physically reshapes your brain for better focus
+                        and emotional control.</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ab labore, harum hic
+                    quidem corporis quisquam ad veritatis repudiandae alias.</div>
+            </div>
+            <div class="col-4">
+                <div class="card"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ab labore, harum hic
+                    quidem corporis quisquam ad veritatis repudiandae alias.</div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="col-12">
+
+
+            <div class="col-4">
+                <div class="card2">
+                    <div class="image">
+                        <img src="unsplash-mountain-cloud.avif" alt="fre" srcset="">
+                    </div>
+                    <div class="text">
+                        <h3>Morning Meditation</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ab labore, harum hic
+                            quidem corporis quisquam ad veritatis repudiandae alias.</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-4">
+                <div class="card2">
+                    <div class="image">
+                        <img src="unsplash-mountain-cloud.avif" alt="fre" srcset="">
+                    </div>
+                    <div class="text">
+                        <h3>Morning Meditation</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ab labore, harum hic
+                            quidem corporis quisquam ad veritatis repudiandae alias.</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-4">
+                <div class="card2">
+                    <div class="image">
+                        <img src="unsplash-mountain-cloud.avif" alt="fre" srcset="">
+                    </div>
+                    <div class="text">
+                        <h3>Morning Meditation</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ab labore, harum hic
+                            quidem corporis quisquam ad veritatis repudiandae alias.</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+    <section>
+        <!-- <div class="col-12">
+        <div class="col-3">
+            <div class="box1"><img class="picture1" src="download (1).jpg" alt="" srcset=""></div>
+        </div>
+        <div class="col-3">
+            <div class="box1"><img class="picture2" src="Death-of-the-Silver-Surfer-Issue-1-But-Why-Tho.jpg" alt="" srcset=""></div>
+        </div>
+        <div class="col-3">
+            <div class="box2">hello</div>
+        </div>
+        <div class="col-3">
+            <div class="box1"></div>
+        </div>
+        <div class="col-3">
+            <div class="box1"></div>
+        </div>
+        <div class="col-3">
+            <div class="box1"></div>
+        </div>
+        <div class="col-3">
+            <div class="box1"></div>
+        </div>
+        <div class="col-3">
+            <div class="box1"></div>
+        </div>
+    </div> -->
+</body>
+</body>
+
+</html>
